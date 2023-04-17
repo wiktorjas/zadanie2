@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>logowanie</title>
+<body>
+Dzień dobry zaloguj się.
+
+    <form action="logowanie.php" method="post">
+    Login: <br/><input type="text" name="login" /><br />
+    Hasło: <br/><input type="password" name="haslo" /><br /><br />
+    <input type="submit" value="Zaloguj się" />
+
+
+    </form>
+</body>
+</html>
+
+<?php
+    if (isset($_POST['submit'])) {
+        $login = $_POST['login'];
+        $haslo = $_POST['haslo'];
+        
+        if ($login === "admin" && $haslo === "test") {
+            echo "Zalogowałeś sie";
+        } else {
+            echo "Spróbuj jescze raz, błędne hałso lub login.";
+        }
+    }
+    ?>
